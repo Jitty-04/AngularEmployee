@@ -8,6 +8,7 @@ import { AddempComponent } from './addemp/addemp.component';
 import { SearchEmployeeComponent } from './search-employee/search-employee.component';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { ViewallComponent } from './viewall/viewall.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ViewallComponent } from './viewall/viewall.component';
     AddempComponent,
     SearchEmployeeComponent,
     DeleteEmployeeComponent,
-    ViewallComponent
+    ViewallComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
