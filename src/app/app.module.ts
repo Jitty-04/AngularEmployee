@@ -3,14 +3,49 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AddempComponent } from './addemp/addemp.component';
+import { SearchEmployeeComponent } from './search-employee/search-employee.component';
+import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
+import { ViewallComponent } from './viewall/viewall.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { RouterModule, Routes } from '@angular/router';
+const myRoute:Routes=[{
+  path:"",
+  component:AdminLoginComponent
+},
+{path:"add",
+ component:AddempComponent
+},
+{
+  path:"search",
+  component:SearchEmployeeComponent
+},
+{
+  path:"delete",
+  component:DeleteEmployeeComponent
+},
+{
+  path:"view",
+  component:ViewallComponent
+}
+
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminLoginComponent,
+    AddempComponent,
+    SearchEmployeeComponent,
+    DeleteEmployeeComponent,
+    ViewallComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
