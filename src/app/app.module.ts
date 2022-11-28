@@ -10,6 +10,7 @@ import { DeleteEmployeeComponent } from './delete-employee/delete-employee.compo
 import { ViewallComponent } from './viewall/viewall.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 const myRoute:Routes=[{
   path:"",
   component:AdminLoginComponent
@@ -45,7 +46,8 @@ const myRoute:Routes=[{
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(myRoute)
+    RouterModule.forRoot(myRoute),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
