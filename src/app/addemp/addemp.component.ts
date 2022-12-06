@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-addemp',
@@ -7,21 +8,52 @@ import { Component } from '@angular/core';
 })
 export class AddempComponent {
 
-  Name=""
-  Designation=""
-  Salary=""
-  Company=""
-  Email=""
+empcode=""
+  empname=""
+  designation=""
+  salary=""
+  companyname=""
+  mbno=""
+  username=""
+  password=""
+  constructor(private api:ApiService){}
 
   readValues=()=>
   {
-    let data:any=    {
-      "Name":this.Name,
-      "Designation":this.Designation,
-      "Salary":this.Salary,
-      "Company":this.Company,
-      "Email":this.Email
+    let data:any=   
+     {
+      "empcode":this.empcode,
+      "empname":this.empname,
+      "designation":this.designation,
+      "salary":this.salary,
+      "companyname":this.companyname,
+      "mbno":this.mbno,
+      "username":this.username,
+      "password":this.password
     }
     console.log(data)
+    this.api.addEmployee(data).subscribe(
+      (response:any)=>
+      {
+        console.log(response)
+        if (response.status=="success") {
+          alert("course added successfully")
+          this.empcode=""
+          this.empname=""
+          this.designation=""
+          this.salary=""
+          this.mbno=""
+          this.username=""
+          this.password=""
+        
+          
+        } else {
+          alert("something went wrong")
+        }
+      }
+    )
+  
+  
   }
-}
+  }
+
