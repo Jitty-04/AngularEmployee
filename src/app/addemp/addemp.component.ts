@@ -37,7 +37,7 @@ empcode=""
       {
         console.log(response)
         if (response.status=="success") {
-          alert("course added successfully")
+          alert("Employee added successfully")
           this.empcode=""
           this.empname=""
           this.designation=""
